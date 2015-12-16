@@ -1,4 +1,33 @@
+# import the relevant libraries
+import time
 import pygame
+import pygame.camera
+from pygame.locals import *
+# this is where one sets how long the script
+# sleeps for, between frames.sleeptime__in_seconds = 0.05
+# initialise the display window
+screen = pygame.display.set_mode([800,420])
+pygame.init()
+pygame.camera.init()
+# set up a camera object
+cam = pygame.camera.Camera("/dev/video0",(640,480))
+# start the camera
+cam.start()
+
+while 1:
+
+    # sleep between every frame
+    time.sleep( sleeptime__in_seconds )
+    # fetch the camera image
+    image = cam.get_image()
+    # blank out the screen
+    screen.fill([0,0,0])
+    # copy the camera image to the screen
+    screen.blit( image, ( 100, 0 ) )
+    # update the screen to show the latest screen image
+    pygame.display.update()
+
+"""import pygame
 import pygame.camera
 from pygame.locals import *
 
@@ -49,4 +78,4 @@ class Capture(object):
                     self.cam.stop()
                     going = False
 
-            self.get_and_flip()
+            self.get_and_flip()"""
