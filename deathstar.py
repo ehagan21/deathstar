@@ -1,10 +1,10 @@
-#!/bin/bash
+#! /usr/bin/env python
 """Deathstar takes a camera feed from a USB camera (using pygame) and spits it out onto
 a 480 x 320 monitor which is attached to a helmet, showing the cameras path through a 
-rotating felt Death Star"""
+rotating felt Death Star
 
-#This code borrows heavily from pygame.cam example and also includes other example code
-
+This code borrows heavily from pygame.cam example and also includes other example code
+"""
 
 
 # import the relevant libraries
@@ -44,4 +44,3 @@ try:
                 # close the camera safely
                 cam.stop()
                 pygame.quit()
-
