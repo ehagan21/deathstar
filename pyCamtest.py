@@ -4,7 +4,8 @@ import pygame
 import pygame.camera
 from pygame.locals import *
 # this is where one sets how long the script
-# sleeps for, between frames.sleeptime__in_seconds = 0.05
+# sleeps for, between frames.
+sleeptime__in_seconds = 0.05
 # initialise the display window
 screen = pygame.display.set_mode([800,420])
 pygame.init()
