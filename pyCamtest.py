@@ -7,7 +7,7 @@ from pygame.locals import *
 # sleeps for, between frames.
 sleeptime__in_seconds = 0.05
 # initialise the display window
-screen = pygame.display.set_mode(FULLSCREEN)
+screen = pygame.display.set_mode((640, 480),FULLSCREEN)
 pygame.init()
 pygame.camera.init()
 # set up a camera object
@@ -27,6 +27,15 @@ while 1:
     screen.blit( image, ( 100, 0 ) )
     # update the screen to show the latest screen image
     pygame.display.update()
+
+    events = pygame.event.get()
+            for e in events:
+                if e.type == QUIT or (e.type == KEYDOWN and e.key == K_ESCAPE):
+                    # close the camera safely
+                    cam.stop()
+                    pygame.stop()
+
+    
 
 """import pygame
 import pygame.camera
