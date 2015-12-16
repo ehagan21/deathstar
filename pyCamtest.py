@@ -29,11 +29,11 @@ while 1:
     pygame.display.update()
 
     events = pygame.event.get()
-            for e in events:
-                if e.type == QUIT or (e.type == KEYDOWN and e.key == K_ESCAPE):
-                    # close the camera safely
-                    cam.stop()
-                    pygame.stop()
+    for e in events:
+        if e.type == QUIT or (e.type == KEYDOWN and e.key == K_ESCAPE):
+            # close the camera safely
+            cam.stop()
+            pygame.stop()
 
     
 
