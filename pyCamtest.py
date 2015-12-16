@@ -24,7 +24,7 @@ while 1:
     # blank out the screen
     screen.fill([0,0,0])
     # copy the camera image to the screen
-    screen.blit( image, ( 0, 0 ) )
+    screen.blit( image, ( 0, 20 ) )
     # update the screen to show the latest screen image
     pygame.display.update()
 
