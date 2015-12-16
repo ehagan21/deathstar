@@ -7,7 +7,7 @@ from pygame.locals import *
 # sleeps for, between frames.
 sleeptime__in_seconds = 0.05
 # initialise the display window
-screen = pygame.display.set_mode([800,420])
+screen = pygame.display.set_mode(FULLSCREEN)
 pygame.init()
 pygame.camera.init()
 # set up a camera object
