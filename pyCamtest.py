@@ -33,7 +33,7 @@ while 1:
         if e.type == QUIT or (e.type == KEYDOWN and e.key == K_ESCAPE):
             # close the camera safely
             cam.stop()
-            pygame.stop()
+            pygame.quit()
 
     
 
