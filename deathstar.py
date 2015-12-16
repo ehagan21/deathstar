@@ -1,8 +1,11 @@
+#!/bin/bash
 """Deathstar takes a camera feed from a USB camera (using pygame) and spits it out onto
 a 480 x 320 monitor which is attached to a helmet, showing the cameras path through a 
 rotating felt Death Star"""
 
 #This code borrows heavily from pygame.cam example and also includes other example code
+
+
 
 # import the relevant libraries
 import time
@@ -17,26 +20,28 @@ screen = pygame.display.set_mode((480, 320),FULLSCREEN)
 pygame.init()
 pygame.camera.init()
 # set up a camera object
-cam = pygame.camera.Camera("/dev/video0",(480,320))
+cam = pygame.camera.Camera("/dev/video0",(320,240))
 # start the camera
 cam.start()
 
-while 1:
+try:
+    while 1:
 
     # sleep between every frame
-    time.sleep( sleeptime__in_seconds )
+        time.sleep( sleeptime__in_seconds )
     # fetch the camera image
-    image = cam.get_image()
+        image = cam.get_image()
     # blank out the screen
-    screen.fill([0,0,0])
+        screen.fill([0,0,0])
     # copy the camera image to the screen
-    screen.blit( image, ( 0, 20 ) )
+        screen.blit( image, ( 0, 20 ) )
     # update the screen to show the latest screen image
-    pygame.display.update()
+        pygame.display.update()
 
-    events = pygame.event.get()
-    for e in events:
-        if e.type == QUIT or (e.type == KEYDOWN and e.key == K_ESCAPE):
-            # close the camera safely
-            cam.stop()
-            pygame.quit()
+        events = pygame.event.get()
+        for e in events:
+            if e.type == QUIT or (e.type == KEYDOWN and e.key == K_ESCAPE):
+                # close the camera safely
+                cam.stop()
+                pygame.quit()
+
